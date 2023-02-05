@@ -1,0 +1,49 @@
+{
+  "name": "url-bucketeer",
+  "version": "1.0.0",
+  "description": "Library to take urls and map them into preconfigured url buckets. Will match configured paths using wild cards to limit cardinality of urls that have unique ids in them.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "keywords": ["url","route","match", "route match","sanitize",":id"],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "watch": "npm run build -- --watch src",
+    "prepublishOnly": "npm run build",
+    "test": "jest --collectCoverage",
+    "test-watch": "npm run test -- --watchAll"
+  },
+  "author": "Greg Thomas",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^29.4.0",
+    "babel-jest": "^29.4.1",
+    "jest": "^29.4.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts",
+      "!src/index.ts",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 100
+      }
+    }
+  }
+}
