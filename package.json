@@ -1,6 +1,6 @@
 {
   "name": "url-bucketeer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to take urls and map them into preconfigured url buckets. Will match configured paths using wild cards to limit cardinality of urls that have unique ids in them.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
